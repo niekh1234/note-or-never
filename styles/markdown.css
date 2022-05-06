@@ -1,0 +1,120 @@
+.never-markdown {
+  --text-base: #d1d5db;
+  --text-emphasis: #f3f4f6;
+  --bg-highlighted: #4b5563;
+}
+
+.never-markdown > *:first-child {
+  margin-top: 0;
+}
+
+.never-markdown h1 {
+  color: var(--text-emphasis);
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.never-markdown h2 {
+  color: var(--text-emphasis);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.never-markdown h3 {
+  color: var(--text-emphasis);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.never-markdown h4 {
+  color: var(--text-emphasis);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.never-markdown ul {
+  list-style-type: disc;
+}
+
+.never-markdown ol {
+  list-style-type: decimal;
+}
+
+.never-markdown li {
+  margin-left: 1.6rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.4rem;
+}
+
+.never-markdown li::marker {
+  color: #6b7280;
+}
+
+.never-markdown a {
+  text-decoration: underline;
+}
+
+.never-markdown a:hover {
+  text-decoration: none;
+}
+
+.never-markdown p {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.never-markdown :not(pre) > code {
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  color: var(--text-emphasis);
+  background-color: var(--bg-highlighted);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.never-markdown hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: var(--bg-highlighted);
+}
+
+.never-markdown blockquote {
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 1rem;
+  border-left-width: 0.25rem;
+  border-left-color: #374151;
+}
+
+.never-markdown blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+.never-markdown blockquote p:first-of-type::after {
+  content: close-quote;
+}
+
+.never-markdown pre {
+  background-color: #111827;
+  overflow-x: auto;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.7em;
+  margin-top: 1.7em;
+  border-radius: 0.3rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}

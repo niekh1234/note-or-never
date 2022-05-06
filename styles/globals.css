@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* re-usable tailwind stuff */
+.btn-primary {
+  @apply px-6 py-2 font-semibold text-white rounded bg-fuchsia-600 hover:bg-fuchsia-500 focus:ring-2 focus:ring-fuchsia-200;
+}
+
+.input-primary {
+  @apply p-2 text-gray-100 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-fuchsia-600;
+}
+
+/* some fixes / tweaks */
+body {
+  overflow-x: hidden;
+}
+
+.gutter:hover {
+  cursor: col-resize;
+}

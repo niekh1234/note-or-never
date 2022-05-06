@@ -1,0 +1,19 @@
+[package]
+name = "md-wasm"
+version = "0.1.0"
+authors = ["Niek Hagen <niekhagen@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.80"
+pulldown-cmark = "0.9.1"
+
+# will do some testing to see what is fastest
+[profile.release]
+lto = true
+opt-level = 's'

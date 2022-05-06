@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Note" ADD COLUMN     "view" TEXT NOT NULL DEFAULT E'S';
