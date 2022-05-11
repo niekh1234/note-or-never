@@ -1,0 +1,16 @@
+{
+  "name": "md-wasm",
+  "collaborators": [
+    "Niek Hagen <niekhagen@hotmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "md_wasm_bg.wasm",
+    "md_wasm.js",
+    "md_wasm_bg.js",
+    "md_wasm.d.ts"
+  ],
+  "module": "md_wasm.js",
+  "types": "md_wasm.d.ts",
+  "sideEffects": false
+}
