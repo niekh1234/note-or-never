@@ -19,12 +19,10 @@ const SidebarActionsSort = () => {
         leaveFrom='transform scale-100 opacity-100'
         leaveTo='transform scale-95 opacity-0'
       >
-        <Popover.Panel className='absolute p-4 bg-gray-700 rounded shadow-lg min-w-48'>
+        <Popover.Panel className='absolute right-0 p-4 bg-gray-700 rounded shadow-lg min-w-48'>
           <h3 className='text-sm font-bold text-gray-200'>Sort by</h3>
 
-          <select className='px-2 py-1 mt-4 text-sm text-gray-100 bg-gray-600 rounded'>
-            <option>Date added - ascending</option>
-          </select>
+          <p className='text-sm text-gray-300 whitespace-nowrap'>Coming soon.</p>
         </Popover.Panel>
       </Transition>
     </Popover>

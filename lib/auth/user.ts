@@ -11,6 +11,12 @@ export const createUser = async ({
   username: string;
   password: string;
 }) => {
+  const nUsers = await prisma.user.count();
+
+  if (nUsers > 1) {
+    throw new Error('There is already a registered user. Did you mean to log in?');
+  }
+
   const salt = await genSalt(SALT_ROUNDS);
   const hashedPassword = await hash(password, salt);
 

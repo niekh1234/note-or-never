@@ -2,8 +2,8 @@ import { useUser } from 'hooks/useUser';
 import { NextPage } from 'next';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import UserDetailsForm from 'components/UserDetailsForm';
+import Link from 'next/link';
 
 const Login: NextPage = () => {
   useUser({ redirectTo: '/', redirectIfFound: true });
@@ -25,7 +25,7 @@ const Login: NextPage = () => {
     };
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
@@ -49,18 +49,21 @@ const Login: NextPage = () => {
           It&apos;s <span className='text-fuchsia-600'>note</span> or <br></br>never
         </h1>
         <h2 className='mt-10 text-xl font-semibold text-center text-gray-400'>
-          Let&apos;s log you in real quick.
+          Create an account!
         </h2>
       </header>
       <section className='w-full max-w-lg px-12 py-8 min-h-[16rem] rounded-lg bg-gray-900'>
         <p className='w-full mb-4 text-center text-gray-400'>
-          First time here?{' '}
-          <Link href='/signup'>
-            <a className='font-semibold hover:underline text-fuchsia-500'>Create an account</a>
+          Already have an account?{' '}
+          <Link href='/login'>
+            <a className='font-semibold hover:underline text-fuchsia-500'>Go to login</a>
           </Link>
         </p>
-
-        <UserDetailsForm onSubmit={onSubmit} errorMsg={errorMsg}></UserDetailsForm>
+        <UserDetailsForm
+          onSubmit={onSubmit}
+          errorMsg={errorMsg}
+          actionMsg={'Create my account'}
+        ></UserDetailsForm>
       </section>
     </main>
   );

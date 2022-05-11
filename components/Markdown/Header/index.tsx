@@ -5,7 +5,7 @@ import { updateSelected } from 'store/slices/notes';
 import HeaderMenu from './Menu';
 import HeaderViewSelect from './ViewSelect';
 
-const EditorHeader = () => {
+const MarkdownHeader = () => {
   const { selected } = useAppSelector((state) => state.notes);
   const dispatch = useAppDispatch();
 
@@ -18,7 +18,6 @@ const EditorHeader = () => {
   };
 
   const onViewChange = (view: string) => {
-    dispatch(updateSelected({ view }));
     dispatch(updateNote({ ...selected, view }));
   };
 
@@ -47,4 +46,4 @@ const EditorHeader = () => {
   );
 };
 
-export default EditorHeader;
+export default MarkdownHeader;

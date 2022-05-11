@@ -54,7 +54,6 @@ const SidebarListItem = ({ note, isActive }: SidebarListItemProps) => {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const dispatch = useAppDispatch();
-  const notes = useAppSelector((state) => state.notes.value.items);
 
   const navigateTo = (id: string) => {
     router.push('/?n=' + id);

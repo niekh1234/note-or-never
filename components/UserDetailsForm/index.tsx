@@ -1,12 +1,13 @@
 import { ExclamationCircleIcon, EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
 import { FormEvent, FormEventHandler, useState } from 'react';
 
-interface LoginFormProps {
+interface UserDetailsFormProps {
   onSubmit: (username: string, password: string) => void;
   errorMsg?: string;
+  actionMsg?: string;
 }
 
-const LoginForm = ({ onSubmit, errorMsg }: LoginFormProps) => {
+const UserDetailsForm = ({ onSubmit, errorMsg, actionMsg = 'Sign in' }: UserDetailsFormProps) => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -60,11 +61,11 @@ const LoginForm = ({ onSubmit, errorMsg }: LoginFormProps) => {
         </div>
 
         <button type='submit' className='mt-12 btn-primary'>
-          Sign in
+          {actionMsg}
         </button>
       </div>
     </form>
   );
 };
 
-export default LoginForm;
+export default UserDetailsForm;
