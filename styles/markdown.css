@@ -77,7 +77,7 @@
   border-radius: 0.2rem;
   color: var(--text-emphasis);
   background-color: var(--bg-highlighted);
-  font-size: 0.8rem;
+  font-size: 80%;
   font-weight: bold;
 }
 

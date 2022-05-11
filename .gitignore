@@ -38,3 +38,5 @@ yarn-error.log*
 /wasm/target
 /wasm/Cargo.lock
 /db/data
+
+.env
