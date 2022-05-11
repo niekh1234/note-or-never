@@ -10,9 +10,9 @@
   <!-- Todo insert -->
 
   <h4>
-    <a href="https://note-or-never.app/">View Demo</a>
+    <a href="https://noteornever.app/">View Demo</a>
   <span> · </span>
-    <a href="https://note-or-never.app/">Documentation</a>
+    <a href="https://noteornever.app/installation">Documentation</a>
   <span> · </span>
     <a href="https://github.com/niekh1234/note-or-never/issues/">Report Bug</a>
   <span> · </span>
@@ -159,7 +159,8 @@ Start the server
 ```
 
 Alternatively you can use something like [pm2](https://pm2.keymetrics.io/) to start a service.
-Or [read the full installation guide](https://note-or-never.app/installation)
+
+Or [read the full installation guide](https://noteornever.app/installation)
 
 <!-- Contributing -->
 
