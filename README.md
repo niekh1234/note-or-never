@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1><span style="color:#D946EF">Note</span> or never</h1>
+  <img src="assets/logo.png" />
   
   <p>
     A simple, elegant and self-hosted note-taking app!
