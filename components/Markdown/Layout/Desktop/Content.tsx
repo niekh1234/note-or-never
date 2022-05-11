@@ -23,7 +23,7 @@ const MarkdownContentLayout = () => {
       <div className='flex h-full'>
         <MarkdownEditor
           value={selected}
-          onChange={(content) => null}
+          onChange={(content) => onContentChange(content)}
           onScroll={(scrollY) => setEditorScrollY(scrollY)}
         ></MarkdownEditor>
       </div>

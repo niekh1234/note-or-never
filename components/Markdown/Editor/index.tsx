@@ -15,6 +15,10 @@ interface MarkdownEditorProps {
   isMobile?: boolean;
 }
 
+const KEY_BLACKLIST: { [key: string]: boolean } = {
+  s: true,
+};
+
 const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: MarkdownEditorProps) => {
   const scrollContainerRef = useRef<ReactCodeMirrorRef>(null);
   const [hasStartedEditing, setHasStartedEditing] = useState(false);
@@ -37,6 +41,8 @@ const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: Markdow
     onScroll(scrollPercentage);
   };
 
+  const setScroll = () => {};
+
   return (
     <section className='flex flex-1 w-full md:flex-none md:h-full md:pt-4'>
       <CodeMirror
@@ -51,7 +57,7 @@ const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: Markdow
           onChange(val);
         }}
         onKeyDown={(e) => {
-          if (e.ctrlKey) {
+          if (e.ctrlKey && KEY_BLACKLIST[e.key]) {
             e.preventDefault();
           }
           setHasStartedEditing(() => true);

@@ -1,30 +1,192 @@
-# A simple self-hosted markdown note taking app
+<div align="center">
 
-### Requirements
+  <h1><span style="color:#D946EF">Note</span> or never</h1>
+  
+  <p>
+    A simple, elegant and self-hosted note-taking app!
+  </p>
 
-- I want this note taking app to be a webapp that can be self-hosted
-- There should be username password authentication so that only I can read, edit and use the application
-- The notes should be able to be written in markdown language
-- I want the markdown preview to be fast and and not update once every second, press and key and see instant results.
-- The markdown preview should be able to handle large ~10.000 line markdown files without performance issues
-- You should be able to add images to your notes, simply by pasting them for example.
-- There should be the ability to full text search notes. I'm thinking of doing this client side only using a Rust library
+<!-- Badges -->
+  <!-- Todo insert -->
 
-### Technologies
+  <h4>
+    <a href="https://note-or-never.app/">View Demo</a>
+  <span> · </span>
+    <a href="https://note-or-never.app/">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/niekh1234/note-or-never/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/niekh1234/note-or-never/issues">Request Feature</a>
+  </h4>
+</div>
 
-- `NextJS` as the React framework of choice, using API routes to interact with the DB
-- `Rust (wasm)` for parsing markdown into html using `rust-pulldown-cmark` and
-- `Postgres` as the DB
-- `Prisma` as the ORM- `Tailwindcss` for styling
-- `CodeMirror` for a clean editor
-- `Passport` for authentication. I initially wanted to use NextAuth but I prefer having more control
-- `React Query` to query the data from /api
+<br />
 
-### Learning objectives
+<!-- Table of Contents -->
 
-I have included a couple of technologies that I've never worked with before to get familiar with them for a future job
+# :notebook_with_decorative_cover: Table of Contents
 
-- Get familiar with Redux toolkit as that seems to be the store of choice. I do have some experience with the context api and `Zustand` but I've seen that the context api is not meant for large stores and `Zustand` seems to be less popular.
-- Get familiar with `WASM`. My Rust is not fantastic, but it does not have to be as I only need to create a wrapper for `pulldown-cmark`.
-- Use a web worker.
-- Learn to test my code, I've heard cypress and jest are good ways for unit/integration testing but I've never written a test in my life. To be honest I don't see the point for single-person projects like this but I guess forcing myself to write tests better change my mind.
+- [:notebook_with_decorative_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
+  - [:star2: About the Project](#star2-about-the-project)
+    - [:space_invader: Tech Stack](#space_invader-tech-stack)
+    - [:dart: Features](#dart-features)
+    - [:key: Environment Variables](#key-environment-variables)
+  - [:toolbox: Getting Started](#toolbox-getting-started)
+    - [:bangbang: Prerequisites](#bangbang-prerequisites)
+    - [:gear: Installation](#gear-installation)
+    - [:running: Run Locally](#running-run-locally)
+  - [:wave: Contributing](#wave-contributing)
+  - [:warning: License](#warning-license)
+  - [:handshake: Contact](#handshake-contact)
+  - [:gem: Acknowledgements](#gem-acknowledgements)
+
+<!-- About the Project -->
+
+## :star2: About the Project
+
+<div align="center"> 
+  <img src="assets/note-or-never.jpg" alt="screenshot" />
+</div>
+
+<!-- TechStack -->
+
+### :space_invader: Tech Stack
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://nextjs.org/">Next.js api routes</a></li>
+    <li><a href="https://www.prisma.io/">Prisma</a></li>    
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### :dart: Features
+
+- `PWA`-like experience using background syncing and preemtive updating.
+- Fast markdown parsing using `WASM` and a web worker.
+- Username-password authentication if setup without a database.
+- Modern, clean and response UI using `TailwindCSS` and `Headless UI`
+- Great code editing and syntax highlighting using `CodeMirror`
+- Fast by design, everything is stored in memory. **But that means it cannot handle thousands of records.**
+
+<!-- Env Variables -->
+
+### :key: Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DATABASE_URL` a database url for `prisma`.
+
+`TOKEN_SECRET` for session cookie signing.
+
+<!-- Getting Started -->
+
+## :toolbox: Getting Started
+
+<!-- Prerequisites -->
+
+### :bangbang: Prerequisites
+
+This project uses Yarn as package manager
+
+```bash
+ npm install --global yarn
+```
+
+<!-- Installation -->
+
+### :gear: Installation
+
+Install my-project with npm
+
+```bash
+  yarn install my-project
+  cd my-project
+```
+
+<!-- Run Locally -->
+
+### :running: Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/niekh1234/note-or-never.git
+```
+
+Go to the project directory
+
+```bash
+  cd note-or-never
+```
+
+Install dependencies
+
+```bash
+  yarn install
+```
+
+Build the project
+
+```bash
+  yarn build
+```
+
+Start the server
+
+```bash
+  yarn start
+```
+
+Alternatively you can use something like [pm2](https://pm2.keymetrics.io/) to start a service.
+Or [read the full installation guide](https://note-or-never.app/installation)
+
+<!-- Contributing -->
+
+## :wave: Contributing
+
+<a href="https://github.com/niekh1234/note-or-never/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=niekh1234/note-or-never" />
+</a>
+
+Contributions are always welcome!
+
+<!-- License -->
+
+## :warning: License
+
+Distributed under the Apache 2.0 license. See LICENSE for more information.
+
+<!-- Contact -->
+
+## :handshake: Contact
+
+Niek Hagen - niekhagen@hotmail.com
+
+Project Link: [https://github.com/niekh1234/note-or-never](https://github.com/niekh1234/note-or-never)
+
+<!-- Acknowledgments -->
+
+## :gem: Acknowledgements
+
+- [README.md template used](https://github.com/Louis3797/awesome-readme-template)

@@ -2,7 +2,7 @@ import Iron from '@hapi/iron';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getTokenCookie, MAX_AGE, setTokenCookie } from './auth-cookies';
 
-const TOKEN_SECRET = process.env.TOKEN_SECRET || 'secrettopleasetypescript';
+const TOKEN_SECRET = process.env.TOKEN_SECRET || 'set_an_env_variable_man';
 
 export const setLoginSession = async (res: NextApiResponse, session: any) => {
   const createdAt = Date.now();
