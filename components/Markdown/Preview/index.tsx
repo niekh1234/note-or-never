@@ -40,10 +40,7 @@ const MarkdownPreview = ({ value, scrollY }: MarkdownPreviewProps) => {
   return (
     <div ref={scrollContainerRef} className='flex flex-1 overflow-auto bg-gray-800'>
       <article
-        className={classNames(
-          'max-w-5xl w-full mx-auto p-4',
-          true ? 'text-gray-300 never-markdown' : 'prose prose-invert',
-        )}
+        className='w-full max-w-5xl p-4 mx-auto text-gray-300 never-markdown'
         dangerouslySetInnerHTML={{ __html: markdownHtml }}
       ></article>
     </div>
