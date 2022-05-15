@@ -1,19 +1,34 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
-import { useRouter } from 'next/router';
 import { getNotes, updateNote } from 'store/extra-reducers/notes';
 import MarkdownLayout from './Layout';
 import MarkdownLoadingSkeleton from './Skeleton';
 import useHotkeys from 'hooks/useHotkeys';
+import Toast from 'components/Toast';
+
+const toastDefault = { show: false, msg: '', isError: false };
 
 const MarkdownNote = () => {
-  const { value: notes, status, selected } = useAppSelector((state) => state.notes);
+  const [toast, setToast] = useState(toastDefault);
+  const { value: notes, status, selected, selectedStatus } = useAppSelector((state) => state.notes);
   const dispatch = useAppDispatch();
   const keysPressed = useHotkeys();
 
   useEffect(() => {
     dispatch(getNotes());
   }, []);
+
+  useEffect(() => {
+    if (selectedStatus === 'saved') {
+      setToast(() => ({ msg: 'Saved', show: true, isError: false }));
+
+      const timeout = setTimeout(() => {
+        hideToast();
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [selectedStatus]);
 
   useEffect(() => {
     if (keysPressed && keysPressed['Control']) {
@@ -37,12 +52,17 @@ const MarkdownNote = () => {
     }
   }, [keysPressed]);
 
+  const hideToast = () => {
+    setToast(() => toastDefault);
+  };
+
   if (status === 'loading' && !notes?.items) {
     return <MarkdownLoadingSkeleton></MarkdownLoadingSkeleton>;
   }
 
   return (
     <div className='bg-gray-800'>
+      <Toast show={toast.show} msg={toast.msg} isError={toast.isError} onClose={hideToast}></Toast>
       <MarkdownLayout></MarkdownLayout>
     </div>
   );
