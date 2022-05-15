@@ -1,14 +1,17 @@
 import Spinner from 'components/Spinner';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { updateNote } from 'store/extra-reducers/notes';
+import { setSelectedStatus } from 'store/slices/notes';
 
 const SaveButton = () => {
   const { selected, selectedStatus } = useAppSelector((state) => state.notes);
   const dispatch = useAppDispatch();
 
-  const onSave = () => {
+  const onSave = async () => {
     if (selected) {
-      dispatch(updateNote(selected));
+      await dispatch(updateNote(selected));
+
+      await dispatch(setSelectedStatus('saved'));
     }
   };
 

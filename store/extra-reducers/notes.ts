@@ -112,6 +112,6 @@ export const getExtraReducers = (builder: ActionReducerMapBuilder<NotesState>) =
   });
 
   builder.addCase(updateNote.fulfilled, (state, action) => {
-    state.selectedStatus = 'saved';
+    state.selectedStatus = null;
   });
 };

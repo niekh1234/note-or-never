@@ -34,12 +34,15 @@ export const notesSlice = createSlice({
         };
       }
     },
+    setSelectedStatus: (state, action) => {
+      state.selectedStatus = action.payload;
+    },
   },
   extraReducers: (builder) => {
     getExtraReducers(builder);
   },
 });
 
-export const { setSelected, updateSelected } = notesSlice.actions;
+export const { setSelected, updateSelected, setSelectedStatus } = notesSlice.actions;
 
 export default notesSlice.reducer;
