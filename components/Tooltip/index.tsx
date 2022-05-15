@@ -36,7 +36,7 @@ const Tooltip = ({ position, msg, children }: TooltipProps) => {
       {show && (
         <div
           className={classNames(
-            'absolute z-20 flex items-center border border-gray-800',
+            'absolute z-20 hidden md:flex items-center border border-gray-800',
             pClassname,
           )}
         >
