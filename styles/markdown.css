@@ -13,7 +13,7 @@
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .never-markdown h2 {
@@ -21,7 +21,6 @@
   font-size: 1.6rem;
   font-weight: 500;
   margin-top: 1.6rem;
-  margin-bottom: 1.6rem;
 }
 
 .never-markdown h3 {
@@ -29,7 +28,6 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .never-markdown h4 {
@@ -37,7 +35,6 @@
   font-size: 1rem;
   font-weight: 500;
   margin-top: 0.6rem;
-  margin-bottom: 0.6rem;
 }
 
 .never-markdown ul {
@@ -68,8 +65,7 @@
 }
 
 .never-markdown p {
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-top: 1rem;
 }
 
 .never-markdown :not(pre) > code {
@@ -83,7 +79,6 @@
 
 .never-markdown hr {
   margin-top: 2rem;
-  margin-bottom: 2rem;
   border-color: var(--bg-highlighted);
 }
 
@@ -117,4 +112,17 @@
   padding-bottom: 0.6rem;
   padding-right: 1rem;
   padding-left: 1rem;
+}
+
+.never-markdown table {
+  table-layout: auto;
+}
+
+.never-markdown table,
+th,
+td {
+  border: 1px solid #6b7280;
+  padding: 0.2rem 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }

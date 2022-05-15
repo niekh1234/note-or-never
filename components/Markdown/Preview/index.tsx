@@ -1,7 +1,5 @@
 import { Note } from 'interfaces/types';
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { classNames } from 'utils/classnames';
-import { calculateScrollPercentage } from 'utils/scroll-percentage';
 
 interface MarkdownPreviewProps {
   value: Note;
