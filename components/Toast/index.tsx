@@ -33,8 +33,8 @@ const Toast = ({ show, msg, isError, onClose }: ToastProps) => {
       <div
         onClick={onClose}
         className={classNames(
-          'fixed z-50 min-h-[2rem] py-4 px-4 transform -translate-x-1/2 rounded-md md:translate-x-0 bottom-8 left-1/2 w-80 border',
-          isError ? 'bg-red-100' : 'bg-green-100',
+          'fixed z-50 min-h-[2rem] py-4 px-4 transform -translate-x-1/2 rounded-md md:translate-x-0 bottom-2 left-1/2 w-80 shadow-lg',
+          isError ? 'bg-red-100' : 'bg-gray-700',
         )}
       >
         <div className='flex flex-row items-center h-full'>
@@ -55,7 +55,7 @@ const Toast = ({ show, msg, isError, onClose }: ToastProps) => {
             <p
               className={classNames(
                 'text-sm font-medium ',
-                isError ? 'text-red-700' : 'text-green-700',
+                isError ? 'text-red-700' : 'text-gray-200',
               )}
             >
               {msg || (isError ? 'Error, try again' : 'Success')}
@@ -70,7 +70,7 @@ const Toast = ({ show, msg, isError, onClose }: ToastProps) => {
                   'inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ',
                   isError
                     ? 'bg-red-100 text-red-700 hover:bg-red-200 focus:ring-offset-red-100 focus:ring-red-700'
-                    : 'bg-green-100 text-green-700 hover:bg-green-200 focus:ring-offset-green-100 focus:ring-green-700',
+                    : 'bg-gray-500 text-gray-700 hover:bg-gray-400 focus:ring-offset-gray-100 focus:ring-gray-700',
                 )}
               >
                 <span className='sr-only'>Dismiss</span>
