@@ -1,3 +1,5 @@
+import SaveButton from 'components/SaveButton';
+import Spinner from 'components/Spinner';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { ChangeEvent } from 'react';
 import { updateNote } from 'store/extra-reducers/notes';
@@ -6,7 +8,7 @@ import HeaderMenu from './Menu';
 import HeaderViewSelect from './ViewSelect';
 
 const MarkdownHeader = () => {
-  const { selected } = useAppSelector((state) => state.notes);
+  const { selected, selectedStatus } = useAppSelector((state) => state.notes);
   const dispatch = useAppDispatch();
 
   if (selected === null || !selected) {
@@ -21,10 +23,6 @@ const MarkdownHeader = () => {
     dispatch(updateNote({ ...selected, view }));
   };
 
-  const onSave = () => {
-    dispatch(updateNote(selected));
-  };
-
   return (
     <div className='p-4 bg-gray-900 h-[6rem] flex items-center justify-between border-b-2 border-gray-600'>
       <div className='flex'>
@@ -34,11 +32,11 @@ const MarkdownHeader = () => {
           className='p-2 px-4 text-lg font-bold text-gray-200 bg-gray-800 rounded focus:outline-none'
         ></input>
 
-        <button onClick={() => onSave()} className='ml-4 btn-primary'>
-          Save
-        </button>
+        <div className='w-4'></div>
 
         <HeaderViewSelect view={selected.view || 'S'} onChange={onViewChange}></HeaderViewSelect>
+
+        <SaveButton></SaveButton>
       </div>
 
       <HeaderMenu></HeaderMenu>

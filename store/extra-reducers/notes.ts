@@ -107,19 +107,11 @@ export const getExtraReducers = (builder: ActionReducerMapBuilder<NotesState>) =
 
       return timeB - timeA;
     });
+
+    state.selectedStatus = 'saving';
   });
 
-  // updating notes with new data from server
-  // don't care about this for now, updated note should already represent the server side note enough
-  // builder.addCase(updateNote.fulfilled, (state, action) => {
-  //   state.value.items = state.value.items.map((note) => {
-  //     if (note.id === action.payload.id) {
-  //       return action.meta.arg;
-  //     }
-
-  //     return note;
-  //   });
-  // });
-
-  // posibly define some error handling here but have not thought of a good solution yet.
+  builder.addCase(updateNote.fulfilled, (state, action) => {
+    state.selectedStatus = 'saved';
+  });
 };

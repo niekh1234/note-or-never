@@ -6,6 +6,7 @@ export interface NotesState {
   value: Notes;
   status: string | null;
   selected: Note | null;
+  selectedStatus: string | null;
 }
 
 const initialState: NotesState = {
@@ -15,6 +16,7 @@ const initialState: NotesState = {
   },
   selected: null,
   status: null,
+  selectedStatus: null,
 };
 
 export const notesSlice = createSlice({
