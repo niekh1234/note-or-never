@@ -84,7 +84,7 @@
 
 - `PWA`-like experience using background syncing and preemtive updating.
 - Fast markdown parsing using `WASM` and a web worker.
-- Username-password authentication if setup without a database.
+- Username-password authentication if setup with a database.
 - Modern, clean and response UI using `TailwindCSS` and `Headless UI`
 - Great code editing and syntax highlighting using `CodeMirror`
 - Fast by design, everything is stored in memory. **But that means it cannot handle thousands of records.**
