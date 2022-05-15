@@ -43,16 +43,16 @@ const Login: NextPage = () => {
   };
 
   return (
-    <main className='flex flex-col items-center w-screen h-screen bg-gray-800'>
-      <header className='pb-16 pt-36'>
-        <h1 className='text-5xl font-bold text-center text-gray-200'>
+    <main className='flex flex-col items-center w-screen h-screen px-2 bg-gray-800'>
+      <header className='pt-16 pb-8 md:pb-16 md:pt-36'>
+        <h1 className='text-3xl font-bold text-center text-gray-200 md:text-5xl'>
           It&apos;s <span className='text-fuchsia-600'>note</span> or <br></br>never
         </h1>
-        <h2 className='mt-10 text-xl font-semibold text-center text-gray-400'>
+        <h2 className='mt-6 text-base font-semibold text-center text-gray-400 md:mt-10 md:text-xl'>
           Let&apos;s log you in real quick.
         </h2>
       </header>
-      <section className='w-full max-w-lg px-12 py-8 min-h-[16rem] rounded-lg bg-gray-900'>
+      <section className='w-full max-w-lg px-6 md:px-12 py-4 md:py-8 min-h-[16rem] rounded-lg bg-gray-900'>
         <p className='w-full mb-4 text-center text-gray-400'>
           First time here?{' '}
           <Link href='/signup'>
