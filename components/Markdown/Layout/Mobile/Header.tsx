@@ -1,6 +1,7 @@
 import { ArrowLeftIcon, TrashIcon } from '@heroicons/react/outline';
 import { DotsVerticalIcon } from '@heroicons/react/solid';
 import ConfirmButton from 'components/ConfirmDialog';
+import SaveButton from 'components/SaveButton';
 import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -45,6 +46,8 @@ const MobileMarkdownHeader = () => {
       </Link>
 
       <div className='flex items-center space-x-2'>
+        <SaveButton></SaveButton>
+
         <ConfirmButton
           onConfirm={() => onDelete(selectedNote.id)}
           dialog={{
@@ -57,7 +60,7 @@ const MobileMarkdownHeader = () => {
           </button>
         </ConfirmButton>
 
-        <button onClick={() => changeView()} className='btn-primary !text-sm'>
+        <button onClick={() => changeView()} className='btn-secondary !text-sm'>
           {selectedNote.view === 'P' ? 'Edit' : 'Preview'}
         </button>
       </div>

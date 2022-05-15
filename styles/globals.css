@@ -7,6 +7,10 @@
   @apply px-6 py-2 font-semibold text-white rounded bg-fuchsia-600 hover:bg-fuchsia-500 focus:ring-2 focus:ring-fuchsia-200;
 }
 
+.btn-secondary {
+  @apply px-4 py-2 font-semibold text-white bg-gray-700 rounded md:px-6 hover:bg-gray-500 focus:ring-2 focus:ring-gray-400;
+}
+
 .input-primary {
   @apply p-2 text-gray-100 bg-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-fuchsia-600;
 }
