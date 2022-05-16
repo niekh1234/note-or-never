@@ -41,8 +41,6 @@ const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: Markdow
     onScroll(scrollPercentage);
   };
 
-  const setScroll = () => {};
-
   return (
     <section className='flex flex-1 w-full md:flex-none md:h-full md:pt-4'>
       <CodeMirror
