@@ -87,7 +87,7 @@
 - Username-password authentication if setup with a database.
 - Modern, clean and response UI using `TailwindCSS` and `Headless UI`
 - Great code editing and syntax highlighting using `CodeMirror`
-- Fast by design, everything is stored in memory. **But that means it cannot handle thousands of records.**
+- Fast by design, everything is stored in memory. **But that means it cannot handle thousands of records in its current state.**
 
 <!-- Env Variables -->
 
