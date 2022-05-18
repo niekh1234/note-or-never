@@ -4,8 +4,6 @@ module.exports = {
       name: 'note-or-never',
       script: 'yarn',
       args: 'start',
-      mode: 'cluster',
     },
   ],
 };
-\
