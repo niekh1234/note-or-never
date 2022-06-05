@@ -1,4 +1,4 @@
-import CodeMirror, { ReactCodeMirrorRef } from '@uiw/react-codemirror';
+import CodeMirror, { ReactCodeMirrorRef, ViewUpdate } from '@uiw/react-codemirror';
 import { markdown } from '@codemirror/lang-markdown';
 import { oneDark } from './theme';
 import { Note } from 'interfaces/types';
@@ -41,6 +41,16 @@ const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: Markdow
     onScroll(scrollPercentage);
   };
 
+  // check if we are scrolled 100% on keypress and set scroll.
+  const handleBottomScroll = (update: ViewUpdate) => {
+    const container = update.view?.scrollDOM;
+    const scrollTop = container.scrollTop;
+    const containerHeight = container.scrollHeight - container.clientHeight;
+
+    const scrollPercentage = scrollTop / containerHeight;
+    onScroll(scrollPercentage);
+  };
+
   return (
     <section className='flex flex-1 w-full md:flex-none md:h-full md:pt-4'>
       <CodeMirror
@@ -53,6 +63,7 @@ const MarkdownEditor = ({ value, onChange, onScroll, isMobile = false }: Markdow
         theme={oneDark}
         onChange={(val, update) => {
           onChange(val);
+          handleBottomScroll(update);
         }}
         onKeyDown={(e) => {
           if (e.ctrlKey && KEY_BLACKLIST[e.key]) {
