@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -15,6 +14,16 @@ model Note {
   updatedAt    DateTime        @updatedAt
   content      String?
   view         String          @default("S")
+  notebook     NoteBook?       @relation(fields: [notebookId], references: [id])
+  notebookId   String?
+}
+
+model NoteBook {
+  id           String          @id @default(uuid())
+  title        String
+  createdAt    String
+  updatedAt    String
+  notes        Note[]
 }
 
 model User {
