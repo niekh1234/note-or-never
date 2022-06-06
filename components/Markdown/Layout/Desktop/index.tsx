@@ -38,7 +38,7 @@ const DesktopMarkdownLayout = () => {
       <Sidebar></Sidebar>
 
       {selected && (
-        <main className='h-[calc(100vh-6rem)] bg-gray-800 w-[calc(100vw-20rem)]'>
+        <main className='h-[calc(100vh-6rem)] bg-gray-800 w-[calc(100vw-30rem)]'>
           <EditorHeader></EditorHeader>
 
           <MarkdownContentLayout></MarkdownContentLayout>

@@ -1,20 +1,39 @@
-import { useAppSelector } from 'hooks/redux';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
 import { useUser } from 'hooks/useUser';
-import { NextPage } from 'next';
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import MarkdownNote from '../components/Markdown';
+import NotesList from 'components/Notes/List';
+import { useEffect, useReducer, useState } from 'react';
+import axios from 'axios';
+import { Notebook, Notes } from 'interfaces/types';
+import useHomepage from 'hooks/useHomepage';
 
-const Home: NextPage = () => {
+interface HomeProps {
+  notes: Notes;
+}
+
+const Home: NextPage<HomeProps> = () => {
   useUser({ redirectTo: '/login' });
-  const selectedNote = useAppSelector((state) => state.notes.selected);
+  const { notes, notebooks, isLoading, error } = useHomepage();
+
+  console.log(notes, notebooks, isLoading, error);
+
+  if (isLoading) {
+    return <div>Loading cunt</div>;
+  }
 
   return (
-    <div>
+    <>
       <Head>
-        <title>{selectedNote?.title || 'Note or never'}</title>
+        <title>Home - Note or never</title>
       </Head>
-      <MarkdownNote></MarkdownNote>
-    </div>
+      <main className='w-screen min-h-screen bg-gray-900'>
+        <p>Welcome!</p>
+        <section className='max-w-5xl mx-auto'>
+          <NotesList notes={notes}></NotesList>
+        </section>
+      </main>
+    </>
   );
 };
 

@@ -15,12 +15,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     let skip = parseInt(req.query.cursor as string) || 0;
 
     const [items, total] = await prisma.$transaction([
-      prisma.note.findMany({
+      prisma.noteBook.findMany({
         take,
         skip,
         orderBy: { updatedAt: 'desc' },
       }),
-      prisma.note.count(),
+      prisma.noteBook.count(),
     ]);
 
     return ok(res, {

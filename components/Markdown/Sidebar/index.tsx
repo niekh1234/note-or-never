@@ -29,7 +29,7 @@ const Sidebar = () => {
   }, [items]);
 
   return (
-    <aside className='relative w-full bg-gray-900 md:w-80'>
+    <aside className='relative w-full bg-gray-900 md:w-[30rem]'>
       <div className='h-40 md:h-48'>
         <div className='flex items-center h-16 p-4 border-b-2 border-gray-600 md:h-24'>
           <h1 className='text-2xl font-bold text-gray-200 sm:text-3xl'>
